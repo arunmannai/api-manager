@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout.tsx";
 import Home from "./pages/Home.tsx";
 import Details from "./pages/Details.tsx";
-import './index.css';
-
+import "./index.css";
 
 export default function App() {
   return (
@@ -19,5 +18,5 @@ export default function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(<App />);
