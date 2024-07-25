@@ -1,13 +1,32 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #3f5f7b;
+}
+.center-container1 {
+  background-color: #3f5f7b;
+  color: white;
+  padding: 50px;
+}
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px;
-  width: 250px;
+  right: -400px;
+  width: 400px;
   height: 100%;
-  background-color: #333;
+  background-color: #3f5f7b;
   color: #fff;
   transition: right 0.3s ease;
   z-index: 100;
+  padding: 10px;
+  margin-bottom: 40px;
+  overflow-y: scroll;
+
 }
 
 .sidebar.show {
@@ -35,4 +54,112 @@
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-button i {
+  margin-left: 5px;
+  font-size: 12px; 
+  transition: transform 0.2s ease;
+
+}
+.dropdown-button div .bi-chevron-down { 
+
+  background-color: black;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sidebarbtn .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .sidebarbtn {
+  display: block;
+}
+
+.dropdown-button i {
+  position: absolute;
+  right: 5px;
+}
+
+.btn-center1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #3E5A72;
+  color: white;
+  padding: 50px;
+
+}
+.expanddetail {
+  background-color: black;
+}
+.icon-image {
+  width: 50px; 
+  height: 50px; 
+  padding: 8px;
+}
+.icon-image1 {
+  width: 80px; 
+  height: 80px; 
+  padding: 8px;
+}
+.dropdown-button.active {
+  background-color:#13202d;
+  color: white;
+  padding: 5px;
+  border-radius: 10px 10px 0px 0px;
+
+}
+
+.dropdown-button1 {
+  background-color: #13202d;
+  color: white;
+  padding: 5px;
+  border-radius: 0px 0px 10px 10px;
+  margin-bottom: 3px;
+}
+
+.dropdown-button i {
+  margin-left: 10px;
+}
+a:link {
+  text-decoration: none;
 }

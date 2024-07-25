@@ -15,8 +15,10 @@ const ApiListItem: React.FC<ApiListItemProps> = ({ api }) => {
  const title = api.info.title;
 
  return <>
- <img src={image} />
+ <div className="sidebaritem">
+ <img src={image} alt={title} className="icon-image" />
  <span>{title}</span>
+ </div>
  </>
 }
 export default ApiListItem;

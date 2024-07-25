@@ -27,6 +27,8 @@ const Layout = () => {
       .catch((error) => setError(error));
   }, []);
 
+  if (error) return <div>Error: {JSON.stringify(error)}</div>;
+
   return (
     <>
       <SideBar
@@ -37,7 +39,6 @@ const Layout = () => {
       <SideBarContext.Provider value={setVisible}>
         <Outlet />
       </SideBarContext.Provider>
-      <div>Error:{JSON.stringify(error)}</div>
     </>
   );
 };
