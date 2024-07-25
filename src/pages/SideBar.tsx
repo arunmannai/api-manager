@@ -1,12 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import SideBarItem from "./SideBarItem";
 
-// interface Provider {
-//  id: number;
-//  name: string;
-//  details: string;
-// }
-
 interface SideBarProps {
   visible: boolean;
   setVisible: Dispatch<SetStateAction<boolean>>;
@@ -24,14 +18,15 @@ const SideBar: React.FC<SideBarProps> = ({
         <div className="backdrop" onClick={() => setVisible(false)}></div>
       )}
       <div className="sidebar">
-      <div className={`sidebar ${visible ? "show" : ""}`}>
-        <div className="content">
-          <h3 className="text-center">Select Provider</h3>
-          {providers.map((item) => (
-            <SideBarItem name={item} key={item} />
-          ))}
+        <div className={`sidebar ${visible ? "show" : ""}`}>
+          <div className="content">
+            <h3 className="text-center">Select Provider</h3>
+            {providers.map((item) => (
+              <SideBarItem name={item} key={item} />
+            ))}
+          </div>
         </div>
-      </div></div>
+      </div>
     </>
   );
 };

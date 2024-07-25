@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { SideBarContext } from "./Layout";
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import '../index.css'; 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../index.css";
 
 const Home = () => {
   const setVisible = useContext(SideBarContext);
@@ -11,7 +11,7 @@ const Home = () => {
       <button
         onClick={() => setVisible!(true)}
         type="button"
-        className="btn btn-primary" 
+        className="btn btn-primary"
       >
         Explore web APIs
       </button>
@@ -20,4 +20,3 @@ const Home = () => {
 };
 
 export default Home;
-
