@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ApiList from "./ApiList";
-import "../index.css";
 
 interface SideBarItemProps {
   name: string;
@@ -10,7 +9,7 @@ const SideBarItem: React.FC<SideBarItemProps> = ({ name }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const toggle = () => setExpanded(!expanded);
-  const icon = expanded ? "bi-chevron-down" : "bi-chevron-up";
+  const icon = expanded ? "bi-chevron-up" : "bi-chevron-down";
   const buttonClass = expanded ? "dropdown-button active" : "dropdown-button";
 
   return (

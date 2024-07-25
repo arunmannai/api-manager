@@ -1,18 +1,17 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import ApiListItem from "./ApiListItem";
+import { useContext, useEffect, useState } from "react";
+import ApiListItem, { IApiListItem } from "./ApiListItem";
 import { Link } from "react-router-dom";
+import { SideBarContext } from "./Layout";
 
 interface ApiListProps {
   name: string;
 }
-interface Api {
-  name: string;
-}
 const ApiList: React.FC<ApiListProps> = ({ name }) => {
-  const [apiList, setApiList] = useState<Api[]>([]);
+  const [apiList, setApiList] = useState<IApiListItem[]>([]);
+  const [slugs, setSlugs] = useState<string[]>([]);
   const [error, setError] = useState();
-  const [slugs, setSlugs] = useState([]);
+  const setVisible = useContext(SideBarContext);
 
   useEffect(() => {
     const url = `https://api.apis.guru/v2/${name}.json`;
@@ -30,7 +29,8 @@ const ApiList: React.FC<ApiListProps> = ({ name }) => {
   return (
     <div className="dropdown-button1">
       {apiList.map((api, index) => (
-        <Link to={`/${slugs[index]}`} key={index}>
+        <Link to={`/${slugs[index]}`} key={index} onClick={() => setVisible!(false)}>
+          {JSON.stringify(error)}
           <ApiListItem api={api} />
         </Link>
       ))}
