@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout.tsx";
-import Home from "./pages/Home.tsx";
-import Details from "./pages/Details.tsx";
+import Layout from "./components/Layout.tsx";
+import Home from "./components/Home.tsx";
+import Details from "./components/Details.tsx";
 import "./index.css";
 
 export default function App() {
